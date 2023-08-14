@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # remoteai
-=======
 # Introduction
 ## Welcome to Recipe AI application! This guide will help you set up and run the application on your local machine. Before you proceed, make sure you have the following prerequisites installed:
 
@@ -32,4 +30,3 @@ Open your web browser and go to http://localhost:8081. You can use postman to ri
 The project contains unit tests and integration tests to ensure the correctness of the application's functionality. You can run the tests using the following command:
 
 mvn test
->>>>>>> 79e0d2a (Initial commit)
