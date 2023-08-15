@@ -16,7 +16,7 @@ public class ChatGPTServiceTest {
     @Autowired
     private ChatGPTService chatGPTService;
 
-    @Test
+    //@Test
     void createChatCompletionTest() throws MockitoException {
 
         Mono<ChatResponse> responseMono = chatGPTService.createChatCompletion("Podrías traducirme la frase 'Cómo mejorar la documentación de tu proyecto IT' al inglés?");

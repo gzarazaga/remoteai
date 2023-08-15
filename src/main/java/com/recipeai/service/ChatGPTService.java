@@ -2,6 +2,8 @@ package com.recipeai.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,6 +15,8 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class ChatGPTService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ChatGPTService.class);
+
 
     private static final String USER = "user";
     private static final String MODEL = "gpt-3.5-turbo";
@@ -27,12 +31,14 @@ public class ChatGPTService {
 
     public Mono<ChatResponse> createChatCompletion(String prompt) {
         // create a request
-        Message message = new Message(USER, MODEL);
+        Message message = new Message(USER, prompt);
         ChatRequest request = new ChatRequest(MODEL, List.of(message));
-        
+
+        LOGGER.info("Request prompt: " + prompt);
         // call the API
         Mono<ChatResponse> result = Mono.just(openaiRestTemplate.postForObject(API_URL, request, ChatResponse.class));
 
+        LOGGER.info("Result: " + result.toString());
         return result;
     }
 }
