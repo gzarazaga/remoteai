@@ -10,6 +10,9 @@ public class ChatResponse {
     private List<Choice> choices;
     private Usage usage;
 
+    public ChatResponse() {
+    }
+
     public ChatResponse(String id, String object, long created, String model, List<Choice> choices, Usage usage) {
         this.id = id;
         this.object = object;
@@ -72,6 +75,9 @@ public class ChatResponse {
         private Message message;
         private String finish_reason;
 
+        public Choice() {
+        }
+
         // Constructor, getters y setters
         public int getIndex() {
             return index;
@@ -101,6 +107,9 @@ public class ChatResponse {
         public static class Message {
             private String role;
             private String content;
+        
+            public Message() {
+            }
             
             public Message(String role, String content) {
                 this.role = role;
@@ -130,6 +139,9 @@ public class ChatResponse {
         private int completion_tokens;
         private int total_tokens;
         
+        public Usage() {
+        }
+
         public Usage(int prompt_tokens, int completion_tokens, int total_tokens) {
             this.prompt_tokens = prompt_tokens;
             this.completion_tokens = completion_tokens;
