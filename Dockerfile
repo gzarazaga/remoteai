@@ -17,9 +17,11 @@ EXPOSE 8081
 # ENV DB_USERNAME=postgres
 # ENV DB_PASSWORD=postgres
 ENV SPRING_DATASOURCE_HOST: db
-ENV SPRING_DATASOURCE_POSTGRES_DB: url-shortener
+ENV SPRING_DATASOURCE_POSTGRES_DB: recipes_ai
 ENV SPRING_DATASOURCE_USERNAME: postgres
 ENV SPRING_DATASOURCE_PASSWORD: postgres
+ENV OPENAI_APIKEY: 1
+
 
 # Install necessary dependencies (PostgreSQL client)
 RUN apt-get update && apt-get install -y \

@@ -15,6 +15,9 @@
 	<description>Recipes by AI</description>
 	<properties>
 		<java.version>17</java.version>
+		<flyway.user>postgres</flyway.user>
+        <flyway.password>postgres</flyway.password>
+        <flyway.schemas>recipes_ai</flyway.schemas>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,6 +28,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<version>2.5.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>io.projectreactor</groupId>
@@ -52,9 +59,19 @@
 			<version>6.1.4.Final</version>
 		</dependency>
 		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+			<version>9.21.0</version>
+		</dependency>
+		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 			<version>2.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
