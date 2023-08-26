@@ -15,7 +15,7 @@ import com.recipeai.service.ChatResponse;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/recipeai")
+@RequestMapping("/api/v1/recipeai")
 public class RecipeAIController {
 
     @Autowired
